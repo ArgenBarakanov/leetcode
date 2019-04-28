@@ -4,7 +4,7 @@ package leetcode_72;
 //
 // You have the following 3 operations permitted on a word:
 //
-// Insert a character
+// Inserting a character
 // Delete a character
 // Replace a character
 // Example 1:

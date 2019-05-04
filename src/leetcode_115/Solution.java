@@ -24,7 +24,7 @@ public class Solution {
         //    ""  r  a  r  a
         //  "" 1  1  1  1  1
         //  r  0  1  1  1  2
-        //  a  0  0  1  1  ---> 3 --> это из двух permutations rar и ra (1 match) AND rar и r . добавляем a в обоих строках ra и ra    
+        //  a  0  0  1  1  ---> 3 --> это из двух permutations rar и ra (1 match) AND rar и r . добавляем a в обоих строках ra и ra
         // array creation
         int[][] mem = new int[T.length()+1][S.length()+1];
 

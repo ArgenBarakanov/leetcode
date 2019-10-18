@@ -16,6 +16,8 @@ public class Solution {
         for (int i = start; i < a.length; i++)
             if (!seen[i]) {//если это уже в каком то подмножестве то не берем его в расчет
                 seen[i] = true;
+                //a[i] влючит в себя все комбинации с a[i+1] ..a[i+2]. поэтому в каждой следующей мы подбираем уже
+                // без a[i]
                 if (canPartition(i + 1, a, seen, k, sum + a[i], target))
                     return true;
                 seen[i] = false;

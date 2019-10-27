@@ -35,7 +35,7 @@ public class Solution {
             int count = currentWin.getOrDefault(c,0);
             currentWin.put(c,count+1);
             if(dictT.containsKey(c)&&currentWin.get(c).intValue()==dictT.get(c).intValue())
-                formed++;//если формед равен реувайред то в нынешнем словаре уже содержится то что нам нужно
+                formed++;//если формед равен реувайред то в нынешнем словаре уже содержится то что нам нужно.увеливаем если у нужной буквы нужное количество в текущей подстроке
 
             while (l<=r&&formed==required)//пока все ок уменьшаем наш отрезок строки
             {

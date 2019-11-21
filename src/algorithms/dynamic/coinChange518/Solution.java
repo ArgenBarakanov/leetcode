@@ -1,6 +1,6 @@
-package algorithms.dynamic.coinChange322;
+package algorithms.dynamic.coinChange518;
 
-//You are given coins of different denominations and a total amount of money amount. Write a function to compute the fewest number of coins that you need to make up that amount. If that amount of money cannot be made up by any combination of the coins, return -1
+//You are given coins of different denominations and a total amount of money. Write a function to compute the number of combinations that make up that amount. You may assume that you have infinite number of each kind of coin.
 public class Solution {
     public int change(int amount, int[] coins) {
         int[][] dp = new int[coins.length+1][amount+1];

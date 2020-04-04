@@ -18,7 +18,6 @@ public class Solution {
             for(int j=1;j<strs.length;j++)
             {
                 if(i==strs[j].length()||c!=strs[j].charAt(i))//сравниваем буквы по позициям каждого слова и если слово закончилось или буквы не совпдают то просто заканчиваем работу метода
-
                     return strs[0].substring(0,i);
             }
         }

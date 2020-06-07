@@ -16,8 +16,8 @@ public class Solution {
         dp[0] = 1;//пустая строка может быть расшифрована как пустая строка
         dp[1] = s.charAt(0) != '0' ? 1 : 0;//если начинается с 0 тоэто 0.иначе это любая цифра
         for(int i = 2; i <= n; i++) {
-            int first = Integer.valueOf(s.substring(i-1, i));//текущее
-            int second = Integer.valueOf(s.substring(i-2, i));//текущее и предыдущее в качестве двузначного
+            int first = Integer.parseInt(s.substring(i-1, i));//текущее
+            int second = Integer.parseInt(s.substring(i-2, i));//текущее и предыдущее в качестве двузначного
             if(first >= 1 && first <= 9) {
                 dp[i] += dp[i-1];//если в промежутке от 1 до 9 то как на предыдущем шаге
             }

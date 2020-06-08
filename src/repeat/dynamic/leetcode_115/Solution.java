@@ -1,5 +1,7 @@
 package repeat.dynamic.leetcode_115;
 
+import java.util.Arrays;
+
 public class Solution {
     public int numDistinct(String S, String T) {
         //для примера приведем rara и ra
@@ -27,5 +29,26 @@ public class Solution {
         }
 
         return mem[T.length()][S.length()];
+    }
+
+    int [][] dp = null;
+
+    public int numDistinct2(String S, String T) {
+        dp = new int[S.length() + 1][T.length() + 1];
+        for(int [] arr : dp) Arrays.fill(arr, -1);
+        return dfs(S, T, 0, 0);
+    }
+
+    public int dfs(String s, String t, int i, int j) {
+        if(j >= t.length()) return 1;
+        if(i >= s.length()) return 0;
+        if(dp[i][j] != -1) return dp[i][j];
+
+        int sol = dfs(s, t, i + 1, j); // ara и ra
+        if(s.charAt(i) == t.charAt(j))
+            sol += dfs(s, t, i + 1, j + 1);// ara и a
+
+        dp[i][j] = sol;
+        return sol;
     }
 }

@@ -40,4 +40,34 @@ public class Solution {
         while(builder.length()>0&&builder.charAt(0)=='0')builder.deleteCharAt(0);
         return builder.length()==0?"0":builder.toString();
     }
+
+    public static void main(String[] args){
+        String s1 = "123";
+        String s2 = "456";
+        Solution solution = new Solution();
+        solution.multiply2(s1,s2);
+    }
+
+    public String multiply2(String num1, String num2) {
+        int[] res = new int[num1.length() + num2.length()];
+        for(int i = num1.length() - 1; i >= 0; i--){
+            for(int j = num2.length() - 1; j >= 0; j--){
+                int n1 = num1.charAt(i) - '0';
+                int n2 = num2.charAt(j) - '0';
+                res[i + j + 1] += n1 * n2;
+            }
+        }
+        int carry = 0;
+        for(int i = res.length - 1; i >= 0; i--) {
+            int temp = (res[i] + carry) % 10;
+            carry = (res[i] + carry) / 10;
+            res[i] = temp;
+        }
+        StringBuilder stringBuilder = new StringBuilder();
+        for(Integer i: res){
+            stringBuilder.append(i);
+        }
+        while (stringBuilder.length() >0 &&stringBuilder.charAt(0) == '0') stringBuilder.deleteCharAt(0);
+        return stringBuilder.toString();
+    }
 }

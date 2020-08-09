@@ -49,9 +49,26 @@ public class Solution {
             i2++;
         }
 
-        for(int k=0;k<workspace.length;k++)
-        {
-            nums1[k]=workspace[k];
+        System.arraycopy(workspace, 0, nums1, 0, workspace.length);
+    }
+
+    public void merge2(int[] nums1, int m, int[] nums2, int n) {
+        int n1 = m - 1;
+        int n2 = n - 1;
+        int w = m + n - 1;
+        while (n1 >= 0 && n2 >= 0) {
+            nums1[w--] = (nums1[n1] > nums2[n2]) ? nums1[n1--] : nums2[n2--];
         }
+        while (n2 >= 0) {
+            nums1[w--] = nums2[n2--];
+        }
+    }
+
+    public static void main(String[] args) {
+        int[] nums1 = {1,2,3,0,0,0};
+        int[] nums2 = {2,5,6};
+        Solution solution = new Solution();
+        solution.merge2(nums1,3,nums2,nums2.length);
+        System.out.println(nums1);
     }
 }
